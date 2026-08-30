@@ -16,7 +16,7 @@
   <header class="page-head">
     <div class="eyebrow">Ops Utility</div>
     <h1>Weekly Report Reconciler</h1>
-    <p class="dek">Drop in this week's three exports. Get back one clean, deduplicated product summary — no manual SKU-matching required.</p>
+    <p class="dek">Drop in this week's three exports, and receive the reconciled report.</p>
   </header>
 
   <section class="intake" aria-label="File intake">
@@ -31,13 +31,7 @@
       <input type="file" id="file-orders" accept=".csv" hidden />
     </div>
 
-    <div class="funnel" aria-hidden="true">
-      <svg viewBox="0 0 120 100" preserveAspectRatio="none">
-        <path d="M10,6 C70,6 70,50 118,50" />
-        <path d="M10,50 C70,50 70,50 118,50" />
-        <path d="M10,94 C70,94 70,50 118,50" />
-      </svg>
-    </div>
+    <div class="funnel funnel-mid" aria-hidden="true"></div>
 
     <div class="slot" id="slot-warehouse" data-slot="warehouse">
       <div class="slot-index">02</div>
@@ -104,7 +98,6 @@
   </section>
 
   <footer class="page-foot">
-    Runs entirely in your browser — files never leave your machine.
   </footer>
 
 </div>

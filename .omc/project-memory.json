@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1788114704610,
+  "projectRoot": "/Users/sourav/Documents/Programming/weekly-report-reconciler",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": "npm test",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "test"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "sample_data": {
+      "path": "sample_data",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1788114704594,
+      "keyFiles": [
+        "system1_shopify_orders.csv",
+        "system2_warehouse_export.csv",
+        "system3_returns.csv"
+      ]
+    },
+    "test": {
+      "path": "test",
+      "purpose": "Test files",
+      "fileCount": 1,
+      "lastAccessed": 1788114704595,
+      "keyFiles": [
+        "run_test.js"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1788114768778,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
