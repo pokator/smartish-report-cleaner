@@ -1,0 +1,5 @@
+rma,Sku,reason,units
+R-9001,SMR_1001,doesn't fit,1
+R-9002,SMR_1020,changed mind,1
+R-9003,SMR_1002,defective,2
+R-9004,SMR_9999,wrong item,1

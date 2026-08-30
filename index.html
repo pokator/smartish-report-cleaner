@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weekly Report Reconciler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-head">
+    <div class="eyebrow">Ops Utility</div>
+    <h1>Weekly Report Reconciler</h1>
+    <p class="dek">Drop in this week's three exports. Get back one clean, deduplicated product summary — no manual SKU-matching required.</p>
+  </header>
+
+  <section class="intake" aria-label="File intake">
+    <div class="slot" id="slot-orders" data-slot="orders">
+      <div class="slot-index">01</div>
+      <label class="slot-body" for="file-orders">
+        <div class="slot-label">System 1</div>
+        <div class="slot-name">Shopify Orders</div>
+        <div class="slot-hint" data-hint>Drop CSV or click to browse</div>
+        <div class="slot-file" data-filename hidden></div>
+      </label>
+      <input type="file" id="file-orders" accept=".csv" hidden />
+    </div>
+
+    <div class="funnel" aria-hidden="true">
+      <svg viewBox="0 0 120 100" preserveAspectRatio="none">
+        <path d="M10,6 C70,6 70,50 118,50" />
+        <path d="M10,50 C70,50 70,50 118,50" />
+        <path d="M10,94 C70,94 70,50 118,50" />
+      </svg>
+    </div>
+
+    <div class="slot" id="slot-warehouse" data-slot="warehouse">
+      <div class="slot-index">02</div>
+      <label class="slot-body" for="file-warehouse">
+        <div class="slot-label">System 2</div>
+        <div class="slot-name">Warehouse Export</div>
+        <div class="slot-hint" data-hint>Drop CSV or click to browse</div>
+        <div class="slot-file" data-filename hidden></div>
+      </label>
+      <input type="file" id="file-warehouse" accept=".csv" hidden />
+    </div>
+
+    <div class="funnel funnel-mid" aria-hidden="true"></div>
+
+    <div class="slot" id="slot-returns" data-slot="returns">
+      <div class="slot-index">03</div>
+      <label class="slot-body" for="file-returns">
+        <div class="slot-label">System 3</div>
+        <div class="slot-name">Returns</div>
+        <div class="slot-hint" data-hint>Drop CSV or click to browse</div>
+        <div class="slot-file" data-filename hidden></div>
+      </label>
+      <input type="file" id="file-returns" accept=".csv" hidden />
+    </div>
+  </section>
+
+  <div class="convergence" aria-hidden="true">
+    <div class="convergence-line"></div>
+    <div class="convergence-node">Reconciled Report</div>
+  </div>
+
+  <section class="action">
+    <button id="generate-btn" disabled>Generate report</button>
+    <div id="status" class="status" role="status"></div>
+  </section>
+
+  <section id="results" class="results" hidden>
+    <div class="results-head">
+      <div class="stat">
+        <div class="stat-value" id="stat-products">0</div>
+        <div class="stat-label">Products</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="stat-flags">0</div>
+        <div class="stat-label">Flagged for review</div>
+      </div>
+      <button id="download-btn">Download weekly_report.xlsx</button>
+    </div>
+
+    <table class="preview-table" id="preview-table">
+      <thead>
+        <tr>
+          <th>SKU</th><th>Product</th><th>Units Sold</th><th>Revenue</th>
+          <th>On Hand</th><th>Location</th><th>Returned</th><th>Reasons</th>
+        </tr>
+      </thead>
+      <tbody id="preview-body"></tbody>
+    </table>
+
+    <details class="flags-details">
+      <summary>View flagged items</summary>
+      <ul id="flags-list"></ul>
+    </details>
+  </section>
+
+  <footer class="page-foot">
+    Runs entirely in your browser — files never leave your machine.
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
